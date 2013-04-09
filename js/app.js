@@ -10,7 +10,7 @@ define([
     //------------------------------------------------------------------------------------------------------------------
     //UI events
 
-
+    //menu click
     $('.nav .menuItem').on('click', function(){
         var menuId = $(this).attr('id').match(/^menu-(.*)$/)[1];
         var testName = String.ucword(menuId);
