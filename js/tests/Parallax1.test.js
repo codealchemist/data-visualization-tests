@@ -11,7 +11,8 @@ define([
 
     /**
      * Load and render current test.
-     * Adds event handling.
+     *
+     * @author Alberto Miranda <alberto.php@gmail.com>
      */
     var load = function() {
         Log.write('Loading test: ' + testName);
@@ -35,6 +36,9 @@ define([
 
     /**
      * Renders current test.
+     *
+     * @author Alberto Miranda <alberto.php@gmail.com>
+     * @param {array} tweets
      */
     var render = function(tweets) {
         Log.write(tweets);
@@ -42,7 +46,7 @@ define([
         $('#visualization').append('<div class="port"><div class="parallaxBackground parallax-layer"></div><div class="parallaxForeground parallax-layer"></div></div>');
         Ui.loadCss('parallax1.test');
 
-        var elements = d3.select(".parallaxForeground")
+        d3.select(".parallaxForeground")
             .selectAll("p")
             .data(tweets)
             .enter().append("p")

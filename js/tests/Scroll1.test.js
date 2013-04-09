@@ -12,7 +12,9 @@ define([
 
     /**
      * Load and render current test.
-     * Adds event handling.
+     * Adds event handling for mouse wheel.
+     *
+     * @author Alberto Miranda <alberto.php@gmail.com>
      */
     var load = function() {
         Log.write('loading test: ' + testName);
@@ -46,6 +48,8 @@ define([
 
     /**
      * Renders current test.
+     *
+     * @author Alberto Miranda <alberto.php@gmail.com>
      */
     var render = function() {
         var margin = {top: 20, right: 40, bottom: 30, left: 20},

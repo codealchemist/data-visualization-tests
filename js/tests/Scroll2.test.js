@@ -10,7 +10,9 @@ define([
 
     /**
      * Load and render current test.
-     * Adds event handling.
+     * Adds event handling for mouse wheel.
+     *
+     * @author Alberto Miranda <alberto.php@gmail.com>
      */
     var load = function() {
         Log.write('Loading test: ' + testName);
@@ -34,7 +36,6 @@ define([
         //handle scroll
         Ui.onScroll(function(){
             Log.write('SCROLLED!');
-            var val = App.Ui.scroll.value;
 
             function scrollTween(element) {
                 return function() {
@@ -46,9 +47,8 @@ define([
                     var distance = move + marginTop;
 
                     //boundary check
-                    var topMargin = pHeight;
                     var bottomMargin = $('.visualizationContainer').height();
-                    if (distance > topMargin) { //top
+                    if (distance > pHeight) { //top
                         Log.write("SCROLL TOP LIMIT REACHED!");
                         return function(t) { $(element).css({"margin-top": "20px"}); };
                     }
@@ -86,7 +86,6 @@ define([
                     Log.write("HEIGHT: " + height + ", CURRENT TOP: " + currentTop + ", DISTANCE: " + distance);
 
                     //boundary check
-                    var bottom = $('.visualizationContainer').height();
                     if (distance > move-10) { //top
                         Log.write("SCROLL TOP LIMIT REACHED!");
                         return function(t) {
@@ -100,7 +99,7 @@ define([
                         return false;
                     }
 
-                    var i = d3.interpolateNumber(currentTop, distance);
+                    d3.interpolateNumber(currentTop, distance);
                     return function(t) {
                         var position = 0 + "px " + distance + "px";
                         $(element).css({"backgroundPosition": position});
@@ -122,6 +121,9 @@ define([
 
     /**
      * Renders current test.
+     *
+     * @author Alberto Miranda <alberto.php@gmail.com>
+     * @param {array} tweets
      */
     var render = function(tweets) {
         Log.write(tweets);
@@ -129,7 +131,7 @@ define([
         $('#visualization').append('<div class="scrollBackground"><div class="scrollForeground"></div></div>');
         Ui.loadCss('scroll2.test');
 
-        var elements = d3.select(".scrollForeground")
+        d3.select(".scrollForeground")
             .selectAll("p")
             .data(tweets)
             .enter().append("p")
