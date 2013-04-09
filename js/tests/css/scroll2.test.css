@@ -1,0 +1,22 @@
+.scrollBackground {
+    width:1300px;
+    height:2000px;
+    background: url('../../../img/moondrawing.jpg');
+    display:block;
+    z-index:-1;
+    margin:-20px 0 0 -20px;
+}
+
+.scrollForeground {
+    float:left;
+    width:960px;
+}
+
+.scrollForeground p {
+    font:normal normal bold 32px courier;
+    margin:20px auto;
+    width:600px;
+    padding:20px;
+    background: #ddd;
+    opacity: 0.8;
+}

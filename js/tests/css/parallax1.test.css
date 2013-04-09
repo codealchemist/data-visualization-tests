@@ -1,0 +1,33 @@
+.parallaxBackground {
+    width:1300px;
+    height:1600px !important;
+    background: url('../../../img/moondrawing.jpg');
+    display:block;
+    z-index:-1;
+    margin:-20px 0 0 -20px;
+}
+
+.parallaxForeground {
+    width:960px;
+}
+
+.parallaxForeground p {
+    font:normal normal bold 32px courier;
+    margin:20px auto;
+    width:600px;
+    padding:20px;
+    background: #ddd;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.parallax-layer {
+    position: absolute;
+}
+
+.port {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    z-index: 1;
+}
