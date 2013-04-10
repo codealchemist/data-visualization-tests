@@ -1,31 +1,38 @@
-.scrollBackground {
+.parallaxBackground2 {
     width:1300px;
-    height:2000px;
+    height:2200px;
     background: url('../../../img/moondrawing.jpg');
     display:block;
     z-index:-1;
     margin:-20px 0 0 -20px;
-}
-
-.scrollForeground {
     float:left;
-    width:960px;
 }
 
-.scrollForeground p {
+.parallaxForeground2 {
+    width:960px;
+    position: absolute;
+}
+
+.parallaxForeground2 p {
     font:normal normal bold 32px courier;
     margin:20px auto;
     width:600px;
     padding:20px;
     background: #ddd;
     opacity: 0.8;
+    cursor: pointer;
+}
+
+.port {
+    position: relative;
+    z-index: 1;
 }
 
 .visualizationContainer {
-    height:500px;
-    padding:20px;
+    height:auto;
+    padding:0;
 }
 
 #visualization {
-    height: 1500px;
+    height: auto;
 }

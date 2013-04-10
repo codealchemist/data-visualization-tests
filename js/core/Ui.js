@@ -77,6 +77,9 @@ define([
      */
     var removeScroll = function() {
         clearInterval(scrollInterval);
+
+        $(container).unbind('wheel');
+        $(container).unbind('mousewheel');
     };
 
     /**

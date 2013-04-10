@@ -29,11 +29,15 @@ require.config({
         jparallax: {
             deps: ['jquery'],
             exports: 'jparallax'
+        },
+        skrollr: {
+            exports: 'skrollr'
         }
     },
     paths: {
         d3: 'lib/d3.v3.min',
         jparallax: 'lib/jquery.parallax.min',
+        skrollr: 'lib/skrollr.min',
         jquery: 'lib/jquery-1.9.1.min',
         log: 'core/Log',
         ui: 'core/Ui',
