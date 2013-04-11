@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Special Elite';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Special Elite'), local('SpecialElite-Regular'), url(http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff) format('woff');
+}
+
+
+.visualizationContainer {
+    height:auto;
+    padding:0;
+}
+
+#visualization {
+    width:auto;
+    height: auto;
+    padding: 20px;
+}
+
+/* --------------------------------------- curtain */
+
+body{
+    height: 100%;
+    overflow-x: hidden;
+    background: black;
+}
+
+.curtains{
+    width: 100%;
+    padding: 50px;
+    height:100%;
+    z-index:1;
+    position:relative;
+}
+
+.curtains>li {
+    position: fixed;
+    display:block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    z-index:1;
+}
+.curtains>li.hidden{display:none;}
+.curtains>li:first-child{z-index:2;}
+
+/* --------------------------------------- curtain */
+
+.ul, .ol {
+    margin:0;
+}
+
+.curtains li {
+    font:normal normal normal 32px 'Special Elite';
+    padding: 20px;
+    list-style: none;
+}
+
+.blue {
+    background: #0044cc url('http://joeworkman.net/rapidweaver/stacks/curtain-call/index_files/curtain-call-images/frontcurtain.png');
+    background-size: 400px 1360px;
+    color: white;
+}
+
+.green {
+    background: #468847 url('http://3.bp.blogspot.com/-fNNkvmQ01Rg/TZXj1eawJKI/AAAAAAAAAA0/1MI09NPTBBg/s1600/bridge%252BII-1600x1200.jpg');
+    background-size: 120% 1360px;
+    color: black;
+}
+
+.black {
+    background: black url('http://upload.wikimedia.org/wikipedia/commons/d/d4/New_York_City_at_night_HDR_edit1.jpg');
+    background-size: 150% 2000px;
+    color: #eee;
+}

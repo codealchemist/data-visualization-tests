@@ -32,12 +32,17 @@ require.config({
         },
         skrollr: {
             exports: 'skrollr'
+        },
+        curtain: {
+            deps: ['jquery'],
+            exports: 'curtain'
         }
     },
     paths: {
         d3: 'lib/d3.v3.min',
         jparallax: 'lib/jquery.parallax.min',
         skrollr: 'lib/skrollr.min',
+        curtain: 'lib/curtain',
         jquery: 'lib/jquery-1.9.1.min',
         log: 'core/Log',
         ui: 'core/Ui',
