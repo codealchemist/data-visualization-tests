@@ -9,28 +9,24 @@ define([
     * @param {mixed} data
     */
     var set = function(namespace, data) {
-        if(data==undefined) data = {};
-        var parts = namespace.split('.');
-        var parent = parts.shift();
-        var dataProperty = parts.pop();
-        if (typeof window[parent] != 'object' || window[parent] == null ) window[parent] = {};
-        parent = window[parent];
+        var object = window,
+            tokens = namespace.split("."),
+            token;
 
-        var len = parts.length;
-        var currentProperty = null;
-        for (var i = 0; i < len; ++i) {
-            //create property if it doesn't exist
-            currentProperty = parts[i];
-            if (typeof parent[ currentProperty ] != 'object' || window[parent] == null){
-                parent[ currentProperty ] = {};
+        var lastToken = tokens.pop();
+        while (tokens.length > 0) {
+            token = tokens.shift();
+
+            if (typeof object[token] === "undefined") {
+                object[token] = {};
             }
-            parent = parent[ currentProperty ];
+
+            object = object[token];
         }
 
-        //assign passed data and return object
-        parent[ dataProperty ] = data;
-        return parent;
-   };
+        object[lastToken] = data;
+        return object;
+    };
    
    /**
     * Get value from passed namespace string.
@@ -40,30 +36,21 @@ define([
     * @return {mixed}
     */
     var get = function(namespace) {
-        var parts = namespace.split('.');
-        var parent = parts.shift();
+       var object = window,
+           tokens = namespace.split("."),
+           token;
 
-        //handle one item name only
-        if (!parts.length) return window[parent];
+       while (tokens.length > 0) {
+           token = tokens.shift();
 
-        var dataProperty = parts.pop();
-        if (typeof window[parent] === "undefined") {
-            return false;
-        }
-        parent = window[parent];
+           if (typeof object[token] === "undefined") {
+               object[token] = {};
+           }
 
-        var len = parts.length;
-        var currentProperty = null;
-        for (var i = 0; i < len; ++i) {
-            //create property if it doesn't exist
-            currentProperty = parts[i];
-            if (typeof parent[ currentProperty ] === "undefined"){
-                parent[ currentProperty ] = {};
-            }
-            parent = parent[ currentProperty ];
-        }
+           object = object[token];
+       }
 
-        return parent[ dataProperty ];
+       return object;
     };
     Log.write('NAMESPACE loaded');
     
