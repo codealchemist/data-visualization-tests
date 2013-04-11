@@ -1,0 +1,43 @@
+.parallaxBackground3 {
+    width:940px;
+    height:500px;
+    background: url('../../../img/clouds.gif') repeat;
+    display:block;
+    z-index:1;
+    margin:0;
+    position: fixed;
+}
+
+.parallaxForeground3 {
+    width:960px;
+    position: fixed;
+    margin: 0 0 0 20px;
+}
+
+.parallaxForeground3 p {
+    font:normal normal bold 32px courier;
+    margin:50px auto;
+    width:600px;
+    padding:20px;
+    background: #ddd;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+}
+
+.visualizationContainer {
+    padding:0;
+}
+
+#visualization {
+
+}
+
+body {
+    height: 3200px;
+}
+
+.container {
+    position: fixed;
+}

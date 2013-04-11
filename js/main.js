@@ -3,6 +3,7 @@
 
 //namespace
 var App = {
+    isLoading: false,
     Ui: {
         scroll: {
             didScroll: false,
@@ -36,6 +37,9 @@ require.config({
         curtain: {
             deps: ['jquery'],
             exports: 'curtain'
+        },
+        handlebars: {
+            exports: 'handlebars'
         }
     },
     paths: {
@@ -44,11 +48,14 @@ require.config({
         skrollr: 'lib/skrollr.min',
         curtain: 'lib/curtain',
         jquery: 'lib/jquery-1.9.1.min',
+        handlebars: 'lib/handlebars',
         log: 'core/Log',
         ui: 'core/Ui',
         namespace: 'core/Namespace',
         settings: 'settings',
-        string: 'core/String'
+        string: 'core/String',
+        template: 'core/Template',
+        storage: 'core/Storage'
     }
 });
 
