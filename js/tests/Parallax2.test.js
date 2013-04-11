@@ -2,10 +2,12 @@ define([
     "d3",
     "ui",
     "log",
-    "skrollr"
-], function(d3, Ui, Log, skrollr){
+    "skrollr",
+    "settings"
+], function(d3, Ui, Log, skrollr, Settings){
     var testName = 'PARALLAX2';
     var container = '#visualization';
+    var cssFile = Settings.testsCssFolder + 'parallax2.test';
     var description = '<a href="http://en.wikipedia.org/wiki/Parallax_scrolling">Parallax scrolling</a> demo using ' +
         '<a href="https://github.com/Prinzhorn/skrollr">Skrollr</a>.<br />' +
         'Dynamically loading Tweets from <a href="http://www.twitter.com/albertomiranda/">my timeline</a>.<br /><br />' +
@@ -50,7 +52,7 @@ define([
             '<div class="parallaxBackground2" data-0="background-position:0px 0px;" data-100000="background-position:0px -50000px;"></div>' +
             '<div class="parallaxForeground2"></div>'
         );
-        Ui.loadCss('parallax2.test');
+        Ui.loadCss(cssFile);
 
         d3.select(".parallaxForeground2")
             .selectAll("p")

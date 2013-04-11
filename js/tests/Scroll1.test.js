@@ -2,10 +2,12 @@ define([
    "jquery",
    "d3",
    "ui",
-   "log"
-], function($, d3, Ui, Log){
+   "log",
+   "settings"
+], function($, d3, Ui, Log, Settings){
     var testName = 'DATA SCROLL 1';
     var container = '#visualization';
+    var cssFile = Settings.testsCssFolder + 'scroll1.test';
     var description = 'Bar graph using <a href="http://d3js.org">d3</a>.<br />Using mouse wheel event.<br />Copied form <a href="http://bl.ocks.org/mbostock/4062085">d3 sample</a>.';
     Ui.Loading.show();
     App.d3 = d3;
@@ -21,7 +23,7 @@ define([
         $(container).html('');
 
         //load related css file
-        Ui.loadCss('scroll1.test');
+        Ui.loadCss(cssFile);
         
         //handle scroll
         Ui.onScroll(function(){

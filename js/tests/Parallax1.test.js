@@ -2,12 +2,13 @@ define([
     "d3",
     "ui",
     "log",
+    "settings",
     "jparallax"
-], function(d3, Ui, Log){
+], function(d3, Ui, Log, Settings){
     var testName = 'PARALLAX1';
     var container = '#visualization';
+    var cssFile = Settings.testsCssFolder + 'parallax1.test';
     var description = '<a href="http://en.wikipedia.org/wiki/Parallax_scrolling">Parallax scrolling</a> demo using <a href="http://stephband.info/jparallax">jquery.parallax</a>.<br />Dynamically loading Tweets from <a href="http://www.twitter.com/albertomiranda/">my timeline</a>.';
-    App.d3 = d3;
 
     /**
      * Load and render current test.
@@ -43,8 +44,12 @@ define([
     var render = function(tweets) {
         Log.write(tweets);
 
-        $('#visualization').append('<div class="port"><div class="parallaxBackground parallax-layer"></div><div class="parallaxForeground parallax-layer"></div></div>');
-        Ui.loadCss('parallax1.test');
+        $('#visualization').append(
+            '<div class="port">' +
+            '<div class="parallaxBackground parallax-layer"></div>' +
+            '<div class="parallaxForeground parallax-layer"></div>' +
+            '</div>');
+        Ui.loadCss(cssFile);
 
         d3.select(".parallaxForeground")
             .selectAll("p")

@@ -1,10 +1,12 @@
 define([
     "d3",
     "ui",
-    "log"
-], function(d3, Ui, Log){
+    "log",
+    "settings"
+], function(d3, Ui, Log, Settings){
     var testName = 'DATA SCROLL 2';
     var container = '#visualization';
+    var cssFile = Settings.testsCssFolder + 'scroll2.test';
     var description = 'Quasi parallax with overriden scrolling.<br />Using mouse wheel event.<br />Dynamically loading Tweets from <a href="http://www.twitter.com/albertomiranda/">my timeline</a>.';
     App.d3 = d3;
 
@@ -129,7 +131,7 @@ define([
         Log.write(tweets);
 
         $('#visualization').append('<div class="scrollBackground"><div class="scrollForeground"></div></div>');
-        Ui.loadCss('scroll2.test');
+        Ui.loadCss(cssFile);
 
         d3.select(".scrollForeground")
             .selectAll("p")

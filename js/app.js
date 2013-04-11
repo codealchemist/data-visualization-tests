@@ -9,13 +9,12 @@ define([
 
     //------------------------------------------------------------------------------------------------------------------
     //UI events
-
-    //menu click
     $('.nav .menuItem').on('click', function(){
         var menuId = $(this).attr('id').match(/^menu-(.*)$/)[1];
         var testName = String.ucword(menuId);
         Log.write('activating MENU: ' + menuId + ", test name: " + testName);
 
+        Ui.loadCss('css/default');
         Ui.Menu.activate(menuId);
         Tests[testName].load();
     });

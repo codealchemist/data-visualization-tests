@@ -117,8 +117,7 @@ define([
      * @param {string} filename Without .css
      */
     var loadCss = function(filename){
-        Log.write(Settings);
-        var cssFile = Settings.testsCssFolder + filename + '.css';
+        var cssFile = filename + '.css';
         Log.write('loading css: ' + cssFile);
         $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', cssFile) );
     };
